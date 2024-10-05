@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balmuda Header</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/calsel.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="balmuda-logo.png" alt="BALMUDA" class="main-logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Stores</a></li>
+                <li><a href="#">サポート</a></li>
+                <li><a href="#"><img src="cart-icon.png" alt="Cart" class="cart-icon"></a></li>
+            </ul>
+        </nav>
+        <div class="signature">
+            <img src="signature-logo.png" alt="BALMUDA Technologies" class="signature-logo">
+        </div>
+    </header>
+    <main>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="image1.png" alt="Slide 1">
+                <img src="image2.png" alt="Slide 2">
+                <img src="image3.png" alt="Slide 3">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        
+        <section class="service-section">
+            <h2 class="service-title">SERVICE</h2>
+            <p class="service-description">
+                私たちモノクスは、高いクリエイション力で<br>
+                ブランディングするWEB制作会社です。
+            </p>
+            <p class="service-details">
+                モノクスは様々な制作物で企業様の課題解決のお手伝いをさせていただいています。<br>
+                企業ホームページのリニューアルやコーポレートサイト、LP制作、サービスサイトなど、<br>
+                WordPressやWEBシステム構築でSEOに強いオリジナルデザインのWEB制作について<br>
+                多くご依頼いただいております。<br><br>
+                企業価値向上を目指すにあたって、WEB制作だけでなく、<br>
+                広告やロゴマークのデザインなど、クリエイティブをトータルでお任せください。
+            </p>
+    
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="icon">
+                        <img src="web-production-icon.png" alt="WEB制作">
+                    </div>
+                    <h3>WEB制作</h3>
+                    <p>ホームページやコーポレートサイト・LPなど企業価値向上に貢献するWEBサイトを制作します。</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <img src="web-system-icon.png" alt="WEBシステム開発">
+                    </div>
+                    <h3>WEBシステム開発</h3>
+                    <p>複雑なWebサイト支えるシステム開発やWordPressのカスタマイズ実装など最適なシステム開発・ご提案を行います。</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <img src="marketing-icon.png" alt="マーケティング支援">
+                    </div>
+                    <h3>マーケティング支援</h3>
+                    <p>お客様の課題を目的を明確にし、WEBサイトの最適化・SEOに表示されるようにマーケティングをサポートします。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="js/calsel.js"></script>
+</html>
