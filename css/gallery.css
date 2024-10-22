@@ -53,6 +53,7 @@
 
     .video-container1 video {
         width: 100%;  /* ビデオの幅を調整してレスポンシブに */
-        max-width: 250px; /* ビデオの最大幅を制限 */
+        max-width: 400px; /* ビデオの最大幅を制限 */
         height: auto; /* 高さを自動調整 */
     }
+
