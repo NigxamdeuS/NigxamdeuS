@@ -1,3 +1,122 @@
+/*========= ナビゲーションのためのCSS ===============*/
+
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+    position:fixed;
+	z-index: -1;
+	opacity: 0;/*はじめは透過0*/
+    /*ナビの位置と形状*/
+	top:0;
+	width:100%;
+    height: 100vh;/*ナビの高さ*/
+	background:#999;
+    /*動き*/
+	transition: all 0.3s;
+}
+
+/*アクティブクラスがついたら透過なしにして最前面へ*/
+#g-nav.panelactive{
+	opacity: 1;
+	z-index:999;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    display: none;
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+#g-nav.panelactive ul {
+    display: block;
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+	color: #333;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	right: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+	
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #666;
+  	width: 45%;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -5,42 +124,213 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold; /* 太字を指定 */
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px;
-    background-color: #ffffff;
-}
-
-.logo img {
-    height: 30px;
-}
-
-nav ul {
+li{
     list-style: none;
-    display: flex;
-    gap: 30px;
 }
 
-nav ul li a {
-    color: #000000;
+a{
     text-decoration: none;
+    color: #000000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+
+}
+
+@media (max-width: 767px) {
+   .navbar{
+    padding-top: 15px;
+    padding-bottom: 15px;
+   }
+}
+
+.logo{
+    margin: 10px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
     font-size: 16px;
 }
 
-nav ul li a:hover {
-    color: #ff0000;
+.menu li a:hover {
+    color: red;
 }
 
-.cart-icon {
-    height: 20px;
+
+.menu-right {
+    display: flex;
+    list-style: none;
+    align-items: center;
 }
 
-.signature img {
+.menu-right li {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.menu-right li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+.menu-right li a img {
+    display: block;
+    margin: 0 auto;
     height: 30px;
+}
+
+.li3 {
+    background-color: #ff0000;
+    width: 100px;
+    height: 100px;
+}
+
+.li4 {
+    background-color: #ffffff;
+    width: 100px;
+    height: 100px;
+}
+
+.li3:hover a, .li3:hover svg  {
+    color: rgb(255, 255, 255);
+}
+
+.li4:hover a, .li4:hover svg {
+    color: rgb(255, 0, 0);
+}
+
+
+/*下の階層のulや矢印の基点にするためliにrelativeを指定*/
+nav ul li{
+	position: relative;
+}
+
+/*2階層目以降は横並びにしない*/
+nav ul ul{
+	display: block;
+}
+
+/*2階層目を持つliの矢印の設定*/
+nav ul li.has-child::before{
+	content:'';
+	position: absolute;
+	left:20px;
+	top:25px;
+	width:6px;
+	height:6px;
+	border-top: 2px solid #999;
+    border-right:2px solid #999;
+    transform: rotate(135deg);
+}
+
+/*== 2・3階層目の共通設定 */
+
+/*下の階層を持っているulの指定*/
+nav li.has-child ul{
+    /*絶対配置で位置を指定*/
+	position: absolute;
+	left:0;
+	top:58px;
+	z-index: 4;
+    text-decoration: none;
+    list-style-type: none;
+    /*形状を指定*/
+	background:#000000;
+	width:180px;
+    height: 40px;
+    border-radius: 5px;
+    /*はじめは非表示*/
+	visibility: hidden;
+	opacity: 0;
+    /*アニメーション設定*/
+	transition: all .3s;
+}
+
+/*hoverしたら表示*/
+nav li.has-child:hover > ul,
+nav li.has-child ul li:hover > ul,
+nav li.has-child:active > ul,
+nav li.has-child ul li:active > ul{
+  visibility: visible;
+  opacity: 1;
+}
+
+/*ナビゲーションaタグの形状*/
+nav li.has-child ul li a{
+	color: #ffffff;
+}
+
+nav li.has-child ul li:last-child > a{
+ border-bottom:none;
+ }
+
+nav li.has-child ul li a:hover,
+nav li.has-child ul li a:active{
+	color: #ff0000;
+}
+
+@media (max-width: 767px) {
+    nav li.has-child ul{
+        height: 155px;
+    }
+
+    nav ul li.has-child::before{
+        left:50px;
+        top:30px;
+        border-top: 2px solid #ffffff;
+        border-right:2px solid #ffffff;
+    }
+}
+
+/* 通常のスタイル */
+.menu, .menu-right {
+    display: flex;
+}
+
+.openbtn {
+    display: none; /* 767px以上ではハンバーガーボタンを非表示 */
+}
+
+/* 767px以下の画面幅で適用するスタイル */
+@media (max-width: 767px) {
+    /* メインメニューを非表示にする */
+    .menu, .menu-right {
+        display: none;
+    }
+
+    /* ハンバーガーメニューのボタン */
+    .openbtn {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* ハンバーガーメニューがアクティブになったときに表示 */
+    #g-nav.active {
+        display: block;
+    }
+}
+
+h3{
+    padding-left: 10px;
+    font-size: 30px;
 }

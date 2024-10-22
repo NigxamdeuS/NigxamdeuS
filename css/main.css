@@ -17,6 +17,7 @@ body {
 }
 
 .service-title {
+    margin-top: 50px;
     font-size: 36px;
     color: #333;
     letter-spacing: 2px;
@@ -38,7 +39,6 @@ body {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 50px;
     flex-wrap: wrap;
 }
 
