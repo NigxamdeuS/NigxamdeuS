@@ -74,3 +74,29 @@ body {
         align-items: center;
     }
 }
+
+/* 動画コンテナの基本スタイル */
+.video-container1 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap; /* 複数行に折り返し可能にする */
+    margin-bottom: 20px;
+}
+
+.video-container1 video {
+    width: calc(50% - 10px); /* 動画を横に2つ並べる */
+    height: auto; /* アスペクト比を維持 */
+}
+
+/* メディアクエリでスマホ対応 */
+@media screen and (max-width: 768px) {
+    .video-container1 {
+        flex-direction: column; /* スマホでは縦並びにする */
+        gap: 15px;
+    }
+
+    .video-container1 video {
+        width: 100%; /* 動画を画面幅いっぱいに */
+    }
+}

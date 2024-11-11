@@ -30,30 +30,3 @@
         columns: 2;
         }	
     }
-
-    .video-container {
-        display: flex;
-        gap: 20px;                /* ビデオ間の余白を設定 */
-        margin: 20px 0;           /* 上下の余白を設定 */
-        justify-content: center;
-    }
-
-    .video-container video {
-        width: 100%;  /* ビデオの幅を調整してレスポンシブに */
-        max-width: 250px; /* ビデオの最大幅を制限 */
-        height: auto; /* 高さを自動調整 */
-    }
-
-    .video-container1 {
-        display: flex;
-        gap: 20px;                /* ビデオ間の余白を設定 */
-        margin: 20px 0;           /* 上下の余白を設定 */
-        justify-content: center;
-    }
-
-    .video-container1 video {
-        width: 100%;  /* ビデオの幅を調整してレスポンシブに */
-        max-width: 400px; /* ビデオの最大幅を制限 */
-        height: auto; /* 高さを自動調整 */
-    }
-
