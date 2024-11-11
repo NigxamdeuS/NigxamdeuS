@@ -78,25 +78,26 @@ body {
 /* 動画コンテナの基本スタイル */
 .video-container1 {
     display: flex;
-    gap: 10px;
+    flex-direction: row; /* 初期表示で横並び */
+    gap: 10px; /* 動画間のスペース */
     justify-content: center;
-    flex-wrap: wrap; /* 複数行に折り返し可能にする */
     margin-bottom: 20px;
 }
 
 .video-container1 video {
-    width: calc(50% - 10px); /* 動画を横に2つ並べる */
+    width: calc(50% - 10px); /* PCでは横に2つ並べる */
     height: auto; /* アスペクト比を維持 */
 }
 
-/* メディアクエリでスマホ対応 */
+/* スマホ対応: 幅768px以下の場合 */
 @media screen and (max-width: 768px) {
     .video-container1 {
-        flex-direction: column; /* スマホでは縦並びにする */
-        gap: 15px;
+        flex-direction: column; /* スマホでは縦並びに変更 */
+        align-items: center; /* 中央寄せ */
     }
 
     .video-container1 video {
-        width: 100%; /* 動画を画面幅いっぱいに */
+        width: 100%; /* 動画を画面幅いっぱいに広げる */
+        margin-bottom: 15px; /* 動画間のスペース */
     }
 }
