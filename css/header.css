@@ -46,6 +46,21 @@
     display: block;
 }
 
+@media (max-width: 767px) {
+    #g-nav li.has-child ul{
+        height: 80px;
+        top: 240%;
+    }
+
+    #g-nav li.has-child li a{
+        color: #ffffff;
+    }
+
+    #g-nav li.has-child li a:hover{
+        color: #FF4655;
+    }
+}
+
 /*リストのレイアウト設定*/
 
 #g-nav li{
@@ -302,12 +317,7 @@ nav li.has-child ul li a:active{
         border-top: 2px solid #000000;
         border-right:2px solid #000000;
     }
-
-    nav li.has-child ul li a:hover,
-    nav li.has-child ul li a:active{
-	color: #ff0000;
-
-}}
+}
 
 /* 通常のスタイル */
 .menu, .menu-right {
