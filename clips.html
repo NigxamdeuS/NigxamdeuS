@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balmuda Header</title>
+    <title>Nigxamのホームページへようこそ！</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/calsel.css">
@@ -20,7 +21,7 @@
             <li><a href="baseball.html">baseball</a></li>
             <li  class="has-child" ><a href="clips.html">clips</a>
                 <ul>
-                    <li><a href="clips.html">VALORANT</a></li>
+                    <li><a href="clips.html #VALORANT">VALORANT</a></li>
                     <li><a href="clips.html">others</a></li>
                 </ul>
             </li>
@@ -42,12 +43,18 @@
                 <li><a href="index.html">HOME</a></li> 
                 <li><a href="Travel.html">TRAVEL</a></li> 
                 <li><a href="baseball.html">BASEBALL</a></li> 
-                <li><a href="clips.html">CLIPS</a></li> 
+                <li  class="has-child" ><a href="clips.html">clips</a>
+                <ul>
+                    <li><a href="clips.html #VALORANT">VALORANT</a></li>
+                    <li><a href="clips.html">others</a></li>
+                </ul>
+            </li>
             </ul>
             </div>
         </nav>
     </header>
     <main>
+        <div id="VALORANT">
         <div class="video-container1">
             <video src="images/valo1.mov" controls></video>
             <video src="images/valo2.mov" controls></video>
@@ -63,6 +70,7 @@
         <div class="video-container1">
             <video src="images/valo7.mov" controls></video>
             <video src="images/valo8.mov" controls></video>
+        </div>
         </div>
     </main>
     <footer>
