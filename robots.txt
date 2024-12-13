@@ -1,2 +1,9 @@
 User-agent: *
 Disallow:
+
+:root {
+  --primary-color: #00c2c3;
+  --secondary-color: #FF4655;
+  --accent-color: #2E3192;
+  --background-color: #f8f9fa;
+}

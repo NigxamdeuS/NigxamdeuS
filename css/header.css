@@ -46,7 +46,7 @@
     display: block;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 870px) {
     #g-nav li.has-child ul{
         height: 80px;
         top: 240%;
@@ -152,6 +152,22 @@ a{
     color: #000000;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 870px) {
+    header {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -160,7 +176,7 @@ a{
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 870px) {
    .navbar{
     padding-top: 15px;
     padding-bottom: 15px;
@@ -198,7 +214,6 @@ a{
 }
 
 .menu-right li {
-    padding-top: 20px;
     text-align: center;
 }
 
@@ -249,7 +264,7 @@ nav ul ul{
 nav ul li.has-child::before{
 	content:'';
 	position: absolute;
-	left:15px;
+    left: 15px;
 	top:25px;
 	width:6px;
 	height:6px;
@@ -274,7 +289,7 @@ nav li.has-child ul{
     /*形状を指定*/
 	background:#636363;
 	width:180px;
-    height: 50px;
+    height: 110px;
     border-radius: 5px;
     /*はじめは非表示*/
 	visibility: hidden;
@@ -306,14 +321,14 @@ nav li.has-child ul li a:active{
 	color: #ff0000;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 870px) {
     nav li.has-child ul{
         height: 80px;
     }
 
     nav ul li.has-child::before{
-        left:50px;
-        top:30px;
+        left:70px;
+        top:60px;
         border-top: 2px solid #000000;
         border-right:2px solid #000000;
     }
@@ -325,11 +340,11 @@ nav li.has-child ul li a:active{
 }
 
 .openbtn {
-    display: none; /* 767px以上ではハンバーガーボタンを非表示 */
+    display: none; /* 870px以上ではハンバーガーボタンを非表示 */
 }
 
-/* 767px以下の画面幅で適用するスタイル */
-@media (max-width: 767px) {
+/* 870px以下の画面幅で適用するスタイル */
+@media (max-width: 870px) {
     /* メインメニューを非表示にする */
     .menu, .menu-right {
         display: none;
@@ -350,4 +365,227 @@ nav li.has-child ul li a:active{
 h3{
     padding-left: 10px;
     font-size: 30px;
+}
+
+/* ベーススタイル */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ロゴスタイル */
+.navbar h3 {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(45deg, #00c2c3, #2E3192);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.navbar h3:hover {
+    transform: scale(1.05);
+}
+
+/* メニューアイテム */
+.menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.menu li a {
+    position: relative;
+    margin: 8px 0;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FF4655;
+    transition: width 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #FF4655;
+}
+
+.menu li a:hover::after {
+    width: 100%;
+}
+
+/* 右側メニュー */
+.menu-right {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-right li {
+    transition: transform 0.3s ease;
+}
+
+.li3, .li4 {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.li3:hover, .li4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ドロップダウンメニュー */
+nav li.has-child ul {
+    background: linear-gradient(135deg, #2E3192, #00c2c3);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav li.has-child ul li a {
+    color: white;
+    transition: all 0.3s ease;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+nav li.has-child ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 870px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .navbar h3 {
+        font-size: 24px;
+    }
+
+    .menu, .menu-right {
+        display: none;
+    }
+
+    #g-nav {
+        width: 100%;
+        height: 100vh;
+    }
+
+    #g-nav-list {
+        padding: 80px 20px 20px;
+    }
+
+    #g-nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #g-nav li a {
+        display: block;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .has-child ul {
+        position: static;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .openbtn {
+        display: block;
+        position: fixed;
+        right: 15px;
+        top: 15px;
+    }
+}
+
+/* アニメーション */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* ドロップダウンメニューのスタイル */
+.has-child ul {
+    padding: 10px 0; /* 上下のパディングを追加 */
+}
+
+.has-child ul li {
+    margin: 10px 0; /* 項目間の余白を追加 */
+}
+
+.has-child ul li a {
+    padding: 5px 15px; /* リンクのパディングを追加 */
+    display: block;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    #g-nav .has-child ul {
+        position: absolute;
+        padding: 0;
+    }
+    
+    #g-nav .has-child ul li {
+        margin: 5px 0;
+    }
+    
+    #g-nav .has-child ul li a {
+        padding: 5px 10px;
+        font-size: 0.9em;
+    }
+}
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

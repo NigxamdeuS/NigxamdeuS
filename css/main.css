@@ -10,10 +10,6 @@ body {
     color: #333;
 }
 
-h1 {
-    text-align: center;
-}
-
 .service-section {
     text-align: center;
     padding: 50px 20px;
@@ -21,10 +17,20 @@ h1 {
 }
 
 .service-title {
-    margin-top: 50px;
-    font-size: 36px;
-    color: #333;
-    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+}
+
+.service-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
 }
 
 .service-description {
@@ -106,17 +112,6 @@ h1 {
     }
 }
 
-.fadeUpTrigger {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-}
-
-.fadeUp {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .calendar-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3列レイアウト */
@@ -130,7 +125,7 @@ h1 {
     }
   }
 
-@media (max-width: 767px) {
+@media (max-width: 870px) {
     .calendar-container {
       grid-template-columns: repeat(1, 1fr); /* 2列レイアウト */
     }
@@ -194,3 +189,73 @@ h1 {
   .days div:nth-child(7n) {
     color: blue; /* 土曜日を青く表示 */
   }
+
+.gallery {
+    columns: 4;
+    column-gap: 20px;
+    padding: 30px;
+}
+
+.gallery li {
+    margin-bottom: 20px;
+    break-inside: avoid;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery li:hover {
+    transform: scale(1.03);
+}
+
+/* レスポンシブ対応の改善 */
+@media screen and (max-width: 768px) {
+    .service-section {
+        padding: 30px 15px;
+    }
+
+    .service-title {
+        font-size: 28px;
+    }
+
+    .service-description {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .service-details {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .video-container1 {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .video-container1 video {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-title {
+        font-size: 24px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+}
