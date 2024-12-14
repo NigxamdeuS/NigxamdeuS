@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/calsel.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" />
     <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
@@ -81,8 +80,9 @@
             <li class="box"><a href="images/20.jpg" data-lightbox="gallery1" data-title="キャプション"><img src="images/20.jpg" alt=""></a></li>
         </ul>
         <div class="video-container1">
-            <video src="images/a.mov" controls></video>
-            <video src="images/b.mov" controls></video>
+            <!-- video要素の属性を追加 -->
+<video src="images/a.mp4" controls preload="auto" type="video/mp4"></video>
+            <video src="images/b.mp4" controls></video>
         </div>
         <div class="video-container1">
             <video src="images/c.mov" controls></video>
@@ -108,7 +108,9 @@
     </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
 <script src="js/fadeup.js"></script>
 <script src="js/hedaer.js"></script>
 <script src="js/calsel.js"></script>
+<script src="js/gallery.js"></script>
 </html>
