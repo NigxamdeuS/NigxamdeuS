@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #00c2c3;
+    --secondary-color: #FF4655;
+    --accent-color: #2E3192;
+    --background-color: #f8f9fa;
+} 
+
 /*========= ナビゲーションのためのCSS ===============*/
 
 #g-nav{
@@ -137,6 +144,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -592,7 +600,7 @@ nav li.has-child ul li a:hover {
 .video-container,
 .image-container {
     position: relative;
-    z-index: 1;  // headerより低い値
+    z-index: 1;  /*headerより低い値*/
 }
 
 /* ヘッダーの操作可能な要素のみpointer-eventsを有効に */
